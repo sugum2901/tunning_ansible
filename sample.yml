@@ -1,0 +1,11 @@
+---
+- name: Test forks with virtual hosts
+  hosts: all
+  tasks:
+    - name: Simulate work on each host
+      shell: sleep 3
+      register: result
+
+    - name: Show which host completed the task
+      debug:
+        msg: "Task completed on {{ inventory_hostname }}"
